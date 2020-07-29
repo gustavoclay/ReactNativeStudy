@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
   return (
@@ -9,6 +9,12 @@ export default function App() {
 
       <Text style={styles.instructions}>
         To share a photo from your phone with a friend, just press the button below!</Text>
+
+      <TouchableOpacity onPress={() => alert('Hello World Button!')} style={styles.button}>
+        <Text style={styles.buttonText}>
+          Pick a photo
+        </Text>
+      </TouchableOpacity>
 
     </View >
   );
@@ -30,5 +36,15 @@ const styles = StyleSheet.create({
     color: '#888',
     fontSize: 18,
     marginHorizontal: 15
+  },
+  button: {
+    backgroundColor: 'blue',
+    padding: 20,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 20,
+    color: '#fff'
   }
+
 });
